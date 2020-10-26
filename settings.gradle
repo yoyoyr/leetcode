@@ -1,0 +1,3 @@
+include ':libLeetCode'
+include ':app'
+rootProject.name = "LeetCode"
