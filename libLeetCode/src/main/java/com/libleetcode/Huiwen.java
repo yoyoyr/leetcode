@@ -1,6 +1,7 @@
 package com.libleetcode;
 
-public class Huiwen {
+//回文字符串
+ class Huiwen {
 
     static final String datas = "A man, a plan, a canal: Panama";
 
