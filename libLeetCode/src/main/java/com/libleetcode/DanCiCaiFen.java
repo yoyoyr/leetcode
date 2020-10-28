@@ -7,8 +7,8 @@ import java.util.List;
 //单词拆分
 class DanCiCaiFen {
 
-        static String s = "catsandog";
-//    static String s = "leetcode";
+    static String s = "catsanddog";
+    //    static String s = "leetcode";
     static List<String> wordDict = new ArrayList();
     static HashSet<String> set;
 
@@ -22,27 +22,12 @@ class DanCiCaiFen {
 //        wordDict.add("code");
 
         set = new HashSet<>(wordDict);
-//        System.out.println("rlt = " + divWords(s));
         System.out.println("rlt = " + dpDivWords());
-    }
 
-    static boolean divWords(String datas) {
-
-        if (datas.equalsIgnoreCase(""))
-            return true;
-        boolean rlt = false;
-        for (int i = 1; i <= datas.length(); ++i) {
-            String sub = datas.substring(0, i);
-            if (set.contains(sub)) {
-                rlt = rlt || divWords(datas.substring(i));
-            }
-        }
-
-        return rlt;
     }
 
     //dp[n] n位置字符串可否被划分为在wordDict数组里面
-    //dp[i] = dp[j] && wordDic.contain(s.substring(j,i-1))
+    //dp[i] = dp[j] && wordDic.contain(s.substring(j+1,i+1))
     static boolean dpDivWords() {
         int n = s.length();
         boolean[] dp = new boolean[n];
@@ -59,7 +44,7 @@ class DanCiCaiFen {
             }
 
         }
-
         return dp[n - 1];
     }
+
 }
