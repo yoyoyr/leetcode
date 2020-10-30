@@ -36,7 +36,6 @@ class DanCiCaiFen2 {
         if (map.containsKey(start)) {
             return map.get(start);
         }
-
         List<String> res = new LinkedList<>();
         if (start == s.length()) {
             res.add("");
@@ -44,20 +43,15 @@ class DanCiCaiFen2 {
 
         for (int i = start; i <= s.length(); ++i) {
             String tmp = s.substring(start, i);
-            System.out.println("tmp = " + tmp);
             if (set.contains(tmp)) {
-                List<String> list = word_Break(i);
-                for (String word : list) {//最终不匹配，list为空，不进入循环
-//                    System.out.println("tmp = " + tmp);
-//                    System.out.println("word = " + word);
-                    StringBuilder words = new StringBuilder();
-                    words.append(tmp + " ").append(word);
-                    res.add(words.toString().trim());
+                List<String> words = word_Break(i);
+                for (String word : words) {
+                    res.add((tmp + " " + word).trim());
                 }
             }
         }
+
         map.put(start, res);
         return res;
     }
-
 }
