@@ -1,4 +1,4 @@
-package com.libleetcode;
+package com.libleetcode.string;
 
 //回文字符串
  class Huiwen {

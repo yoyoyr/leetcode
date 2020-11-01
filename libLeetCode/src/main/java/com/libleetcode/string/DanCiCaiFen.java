@@ -1,4 +1,4 @@
-package com.libleetcode;
+package com.libleetcode.string;
 
 import java.util.ArrayList;
 import java.util.HashSet;
